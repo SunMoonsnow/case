@@ -17,12 +17,12 @@
 
 	 function getCookie(key){
 	 	var start = info.indexOf(key);
-	 	if( start != -1){
-	 		start += key.length+1;
+	 	if( start != -1){//判断能否找到key
+	 		start += key.length+1;//以等号位临界点，从等号位开始截取数值
 
-	 		var end = info.indexOf(';',start);
+	 		var end = info.indexOf(';',start);//分号为终点
 	 		
-	 		if (end!=-1){
+	 		if (end!=-1){//判断终点位是否能够找到分号；
 	 		return info.substring(start,end);
 
 	 		}
@@ -34,7 +34,7 @@
 
 
 	 }
-	 var h =unescape(getCookie('123'));
+	 var h =unescape(getCookie('n'));
 	 console.log(h);
 </script>
 
