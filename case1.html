@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>本地存储</title>
+</head>
+<body>
+<script type="text/javascript">
+	function setCookie(key,val){
+		document.cookie = key + "=" + escape(val);
+	}
+	setCookie('name','张三');
+	setCookie('age',20);
+	setCookie('class','三年级');
+	var info = document.cookie;
+	//console.log(unescape(info));
+
+	 function getCookie(key){
+	 	var start = info.indexOf(key);
+	 	if( start != -1){
+	 		start += key.length+1;
+
+	 		var end = info.indexOf(';',start);
+	 		
+	 		if (end!=-1){
+	 		return info.substring(start,end);
+
+	 		}
+	 		return info.substr(start);
+	 	}
+
+	 		return "抱歉，搜索不到你要查找的数据！"
+	 	
+
+
+	 }
+	 var h =unescape(getCookie('123'));
+	 console.log(h);
+</script>
+
+</body>
+</html>
