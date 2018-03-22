@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>豆瓣</title>
+	<style>
+		li { list-style: none;color:black; float: left;width:100px;margin:0px 20px;}
+		li>img { width: 100px;  }
+		h1 {font-size:18px; font-weight: normal;width:100px;text-align:center; }
+		li span {font-size:15px;display:block;width:100px;text-align:center;color:red;}
+		button {background-color: #eee;font-size:15px;width:100px;height:30px;line-height: 30px;cursor: pointer;display:block;}
+	</style>
+</head>
+<body>
+<div id="bookList" style="font-size: 18px;color:green;text-align:left;overflow: hidden;">豆瓣说书
+	<ul>
+		
+	</ul>
+</div>
+
+	<script type="text/javascript" src="lib/jquery-3.2.1.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$.ajax({
+				url:"data/book.json",
+				type:'get',
+				dataType:'json',
+				success:function(data){
+					
+					var temp = data.bookDetails;
+					console.log(temp);
+					for(var i =0 ;i<temp.length;i++){
+						var str = "";
+						str +="<img src="+temp[i].image+">"+"<h1>"+temp[i].bookname+"</h1>"+"<span>"+temp[i].price+"</span>"+"<button>"+temp[i].type+"</button>";
+						$("ul").append('<li>'+str+'</li>');
+						// $('temp[i].price').css({color:'red'});
+
+					}
+
+				}
+
+			});
+
+
+
+		});
+	</script>
+</body>
+</html>

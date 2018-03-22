@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>音乐调用腾讯接口</title>
+	<style type="text/css">
+		.form{ width:300px;height:100px;display:block; background-color: #ccc; padding: 20px;}
+		 input { width: 220px; height:30px;line-height:30px;background-color:#fff;font-size:15px; color:black;padding-left:15px;box-sizing: border-box;margin:20px auto; outline: none;}
+		button { outline: none;  }
+		h1 { width:200px;font-weight: normal;font-size: 18px; background: url(images/music.png) no-repeat;background-size: 27px 27px;background-position: 168px 0;}
+		h1:hover {color:red;background: url(images/music01.png) no-repeat;background-size: 27px 27px;background-position: 168px 0;}
+
+	</style>
+</head>
+<body>
+<div class="form">
+	<input type="text" value="" name="" placeholder="请输入你想听的歌手或者歌曲">
+	<button>搜索</button>
+</div>
+<div class="list">
+	
+</div>
+	<script type="text/javascript" src="lib/jquery-3.2.1.js"></script>
+	<script type="text/javascript">
+		$(function(){	
+			$('button').click(function(){
+				var keywords = $('.form input').val();
+				var api = "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?ct=24&qqmusic_ver=1298&new_json=1&remoteplace=txt.yqq.center&searchid=51242597723810363&t=0&aggr=1&cr=1&catZhida=1&lossless=0&flag_qc=0&p=1&n=20&w="+keywords+"&g_tk=5381&loginUin=0&hostUin=0&format=jsonp&inCharset=utf8&outCharset=utf-8&notice=0&platform=yqq&needNewCode=0";
+				$.ajax({
+					url:api,
+					type:'get',
+					dataType:'jsonp',
+					jsonp:'jsonpCallback',
+					success:function(data){
+						var temp = data.data.song.list;
+						for (var i = 0;i<temp.length;i++){
+							var str = "";
+							str += temp[i].name;
+							$('.list').append('<h1>'+str+'</h1>');
+
+						}
+
+					}
+
+
+
+				});
+
+
+
+			});
+		});
+	</script>
+
+</form>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+{
+	"code":"0",
+	"bookDetails":[{
+			"image":"images/book001.jpg",
+			"bookname":"亲密而独立",
+			"price":"23￥",
+			"type":"免费试读"
+		},{
+			"image":"images/book002.jpg",
+			"bookname":"梵高地图",
+			"price":"18￥",
+			"type":"免费试读"
+		},{
+			"image":"images/book003.jpg",
+			"bookname":"哲学闪耀时",
+			"price":"18￥",
+			"type":"免费试读"
+		},{
+			"image":"images/book004.jpg",
+			"bookname":"小说课",
+			"price":"15￥",
+			"type":"免费试读"
+		},{
+			"image":"images/book005.jpg",
+			"bookname":"52倍人生",
+			"price":"20￥",
+			"type":"免费试读"
+		}]
+
+}
