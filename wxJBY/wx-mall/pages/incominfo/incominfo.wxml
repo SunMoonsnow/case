@@ -1,0 +1,58 @@
+<view class='profitDetails'>
+  <view class='header'>
+    <!-- <image class='recall' src='../../static/images/recall.png'></image>  -->
+    <view class='title'>收益明细</view>
+    <image class='problem' src='../../static/images/answer.png'></image>
+  </view>
+  <view class='score'>
+    <view class='myScore'>我的积分：</view>
+    <view class='num'>2</view>
+  </view>
+  <view class='scoreChange'>
+    <view class='change {{tapHdCurrent=="0"?"on":""}}' id="0"  data-id="0" catchtap='tap'>积分收入</view>
+    <view class='change {{tapHdCurrent=="1"?"on":""}} ' id="1" data-id="1"  catchtap='tap'>积分支出</view>
+  </view>
+  <view class='time'>本月</view>
+  <view class='from'>
+    <view class='scoreAdd' hidden='{{tapBdCurrent != "0"}}'>
+      <view class='sign'>
+        <view class='left'>
+          <view class='scoreFrom'>签到</view>
+          <view class='date'>2018.7.1</view>
+        </view>
+        <view class='right'>+1</view>
+      </view>
+      <view class='sign'>
+        <view class='left'>
+          <view class='scoreFrom'>签到</view>
+          <view class='date'>2018.7.1</view>
+        </view>
+        <view class='right'>+1</view>
+      </view>
+      <view class='sign'>
+        <view class='left'>
+          <view class='scoreFrom'>签到</view>
+          <view class='date'>2018.7.1</view>
+        </view>
+        <view class='right'>+1</view>
+      </view>
+      <view class='sign'>
+        <view class='left'>
+          <view class='scoreFrom'>签到</view>
+          <view class='date'>2018.7.1</view>
+        </view>
+        <view class='right'>+1</view>
+      </view>
+    </view>
+    <view class='scoreRemove' hidden='{{tapBdCurrent !="1"}}'>
+      <view class='sign'>
+        <view class='left'>
+          <view class='scoreTo'>兑换积分</view>
+          <view class='date'>2018.7.1</view>
+        </view>
+        <view class='right'>-1</view>
+      </view>
+    </view>
+
+  </view>
+</view>
